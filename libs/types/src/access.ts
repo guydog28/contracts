@@ -1,4 +1,4 @@
-import type { Assertion, Vocabulary } from './scheme';
+import type { Assertion, Vocabulary, Warning } from './scheme';
 import type {
     ArtifactReference,
     AssertionReference,
@@ -178,6 +178,11 @@ export interface AccessDecision {
     granted: boolean;
     /** One result per rule in the policy, in policy order. */
     rules: AccessRuleResult[];
+    /**
+     * Warnings from preparing and evaluating the target, including automatic
+     * changes. Present on granted and denied decisions; empty when none apply.
+     */
+    warnings: Warning[];
     /**
      * Source provenance for the access-rule source that evaluated this
      * decision.

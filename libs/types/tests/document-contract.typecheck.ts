@@ -361,6 +361,7 @@ expectTypeOf<AccessRuleResult>().toEqualTypeOf<{
 expectTypeOf<AccessDecision>().toEqualTypeOf<{
     granted: boolean;
     rules: AccessRuleResult[];
+    warnings: Warning[];
     provenance?: SourceReference;
 }>();
 expectTypeOf<AccessRequirementsInput>().toEqualTypeOf<{
