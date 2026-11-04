@@ -22,7 +22,6 @@ The JSON corpus is the exact request catalog. Property order is insignificant; o
 | Guides             | Guide view, rule description, empty/matching/unmatched scans, empty/selected evaluation, and rule filtering                                                                                                                                                                                       |
 | Aggregate          | The worked district example and the repeated-marking/assertion-set forms emitted by the UI examples                                                                                                                                                                                               |
 | Access             | PUBLIC grant, CONFIDENTIAL grant/denial, complex grant, separate clearance/content/school/recipient denials, missing attributes, and requirements/rule descriptions                                                                                                                               |
-| Document access    | Authored grant, authored denial, marking needing completion, and unmarked document; separate authored and authoritative statuses                                                                                                                                                                  |
 | Refusals           | Invalid request body, unknown guide, absent context/version, and the constant authentication refusal recorded from the runtime                                                                                                                                                                    |
 
 Start with `POST /v1/ctx/cedar-valley/1.0.0/scheme/process` and one of these bodies:
@@ -62,8 +61,6 @@ Send `POST /v1/ctx/cedar-valley/1.0.0/access/check`:
 Both return HTTP 200. The first decision is denied and the second is granted. For the complex marking, `access.granted` supplies a complete trusted-attribute example; the four `access.denied-*` recordings alter one attribute family at a time. These are synthetic test facts. Your host application remains responsible for obtaining authoritative identity and attributes.
 
 Use the returned decision and rule explanations to verify your application's log fields, alongside the request target, your authenticated actor and your own correlation metadata. Log collection remains your application's responsibility; replaying a granted response proves that plumbing works, rather than proving a real authorization policy is correct.
-
-`document.assess-access-granted` and `document.assess-access-denied` use a complete authored marking and return corresponding authored/authoritative statuses. `document.assess-access-needs-completion` records the runtime's completion of the complex marking and returns `granted` for both bases with the supplied trusted test attributes. `document.assess-access-unmarked` returns `not-evaluated` for both bases with a `missing-overall-marking` limitation; `document.assess-access-conflicting-overall` returns `not-evaluated` with `conflicting-overall-markings`. Keep those statuses distinct from a grant or denial. Guide matches remain nominations that an author reviews.
 
 ## Transport and bootstrap failures
 

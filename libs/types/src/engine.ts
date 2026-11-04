@@ -30,8 +30,6 @@ import type {
 } from './guide';
 import type {
     ContextOperationResult,
-    DocumentAccessAssessment,
-    DocumentAccessAssessmentInput,
     DocumentAssessmentInput,
     DocumentAuditReport,
     GuideContentEvaluation,
@@ -2844,7 +2842,7 @@ export type ContextSchemeEngineAdapter =
  * contracts, so a component that only marks text takes `ContextAdapter.scheme`
  * and never learns it came from a Context. The operations on this interface are
  * the ones no single family can answer alone: auditing a document needs the
- * scheme and the guides, an access assessment needs the audit and the policy,
+ * scheme and the guides, an access check needs the scheme and the policy,
  * and a crosswalk translation needs both ends of the mapping.
  *
  * Both modes, as everywhere else: a local Context implements it in process and
@@ -2893,14 +2891,6 @@ export interface ContextAdapter {
         input: DocumentAssessmentInput,
     ): MaybePromise<ContextOperationResult<DocumentAuditReport>>;
     /**
-     * Assess document access through the resolved composition.
-     *
-     * @param input - The document, the subject and how to assess access.
-     */
-    assessDocumentAccess(
-        input: DocumentAccessAssessmentInput,
-    ): MaybePromise<ContextOperationResult<DocumentAccessAssessment>>;
-    /**
      * Evaluate a trusted target through the resolved composition. The distinct
      * name keeps this envelope-returning operation separate from the bare
      * decision {@link AccessEngineAdapter.check} returns.
@@ -2944,9 +2934,6 @@ export interface LocalContextAdapter extends ContextAdapter {
     audit(
         input: DocumentAssessmentInput,
     ): ContextOperationResult<DocumentAuditReport>;
-    assessDocumentAccess(
-        input: DocumentAccessAssessmentInput,
-    ): ContextOperationResult<DocumentAccessAssessment>;
     checkContextAccess(
         target: string | Assertion[],
         userAttributes: Record<string, unknown>,
@@ -3435,9 +3422,6 @@ export interface RemoteContextAdapter extends ContextAdapter {
     audit(
         input: DocumentAssessmentInput,
     ): Promise<ContextOperationResult<DocumentAuditReport>>;
-    assessDocumentAccess(
-        input: DocumentAccessAssessmentInput,
-    ): Promise<ContextOperationResult<DocumentAccessAssessment>>;
     checkContextAccess(
         target: string | Assertion[],
         userAttributes: Record<string, unknown>,

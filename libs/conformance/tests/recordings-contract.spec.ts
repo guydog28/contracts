@@ -76,7 +76,6 @@ const RESULT_SCHEMA: Record<string, string | null> = {
 /** Semantic operations and the published envelope each one answers. */
 const ENVELOPE: Record<string, string | null> = {
     auditDocument: 'ContextDocumentAuditResult',
-    assessDocumentAccess: 'ContextDocumentAccessAssessmentResult',
     documentAccessRequirements: 'ContextAccessRequirementsResult',
     // The CLI case records the CLI's own JSON, which is not a wire envelope.
     cliDocument: null,

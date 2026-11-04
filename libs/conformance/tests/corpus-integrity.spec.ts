@@ -483,27 +483,13 @@ describe('semantic fixtures', () => {
         });
 
         it('agrees with what each variant case recorded', () => {
-            // Only variant cases: a base case may bring its own access policy
-            // in the request (cases 10, 11 and 13), which is not a fixture.
-            // Every variant case is checked against something its recording
-            // says, and every declared variant is exercised by one.
+            // Every variant must be exercised by a recorded operation.
             const exercised = new Set<string>();
             for (const [caseId, request] of Object.entries(requests)) {
                 if (!request.fixtureVariant) continue;
                 const fixtures = fixturesFor(request.fixtureVariant);
                 const output = recordings[caseId]?.output;
                 const artifacts = output?.resolution?.artifacts;
-                if (!artifacts) {
-                    // A case that records no resolution records why. The one
-                    // such answer a fixture decides is a context with no
-                    // access policy (case 17, no-access).
-                    expect(output?.error?.code, caseId).toBe(
-                        'NO_ACCESS_POLICY',
-                    );
-                    expect(fixtures.accessFixture, caseId).toBeNull();
-                    exercised.add(request.fixtureVariant);
-                    continue;
-                }
                 const expected = [
                     `scheme:${idOf(fixtures.schemeFixture, 'scheme')}`,
                     ...(fixtures.guideFixture
@@ -514,7 +500,7 @@ describe('semantic fixtures', () => {
                         : []),
                 ];
                 expect(
-                    artifacts
+                    artifacts!
                         .filter((one) =>
                             ['scheme', 'guide', 'access'].includes(one.kind),
                         )

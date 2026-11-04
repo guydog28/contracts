@@ -19,7 +19,6 @@ import type {
     ContextResolution,
     ContextOperationResult,
     DocumentAuditReport,
-    DocumentAccessAssessment,
     DocumentResponseProfile,
     GuideDeterminationInput,
 } from './document.js';
@@ -75,7 +74,6 @@ export type TestOperation =
     | 'guideEvaluate'
     | 'checkAccess'
     | 'auditDocument'
-    | 'assessDocumentAccess'
     | 'translate';
 
 /** Native operation result shapes used to validate typed expectations. */
@@ -109,8 +107,6 @@ export interface TestOperationResults {
     checkAccess: ContextOperationResult<AccessDecision>;
     /** The result of an `auditDocument` case. */
     auditDocument: ContextOperationResult<DocumentAuditReport>;
-    /** The result of an `assessDocumentAccess` case. */
-    assessDocumentAccess: ContextOperationResult<DocumentAccessAssessment>;
     /** The result of a `translate` case. */
     translate: ContextOperationResult<CrosswalkTranslationResult>;
 }

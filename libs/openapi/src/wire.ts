@@ -53,7 +53,6 @@ import type {
 } from '@ezclassify/types';
 
 export type {
-    ContextDocumentAccessAssessmentResult,
     ContextDocumentAuditResult,
 } from '@ezclassify/types';
 
@@ -345,19 +344,6 @@ export interface CtxDocumentAuditRequestBody {
     responseProfile?: DocumentResponseProfile;
 }
 
-/** POST /v1/ctx/{ctxId}/{version?}/document/assess-access */
-export interface CtxDocumentAssessAccessRequestBody {
-    /** Full document text to audit before access is assessed. */
-    text: string;
-    /** User attributes interpreted by the Context's access policy. */
-    userAttributes: Record<string, unknown>;
-    /** Optional relationship attributes used with the user attributes. */
-    context?: Record<string, unknown>;
-    /** Optional analyst decisions applied to nominations for this document. */
-    guideDeterminations?: GuideDeterminationInput;
-    /** Detail projection applied after all access scenarios are evaluated. */
-    responseProfile?: DocumentResponseProfile;
-}
 
 /**
  * POST /v1/ctx/{ctxId}/{version?}/scheme/process: the author's call.

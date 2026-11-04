@@ -14,7 +14,6 @@ import { decl as ctxList } from './ctx-list.js';
 import { decl as ctxVersions } from './ctx-versions.js';
 import { decl as ctxDescribe } from './ctx-describe.js';
 import { decl as ctxDocumentAudit } from './ctx-document-audit.js';
-import { decl as ctxDocumentAssessAccess } from './ctx-document-assess-access.js';
 import { decl as ctxSchemeSummary } from './ctx-scheme-summary.js';
 import { decl as ctxSchemeConcepts } from './ctx-scheme-concepts.js';
 import { decl as ctxSchemeCategories } from './ctx-scheme-categories.js';
@@ -57,7 +56,6 @@ export const routeDecls: ReadonlyArray<RouteDecl> = [
     ctxVersions,
     ctxDescribe,
     ctxDocumentAudit,
-    ctxDocumentAssessAccess,
     ctxSchemeSummary,
     ctxSchemeConcepts,
     ctxSchemeCategories,

@@ -9,7 +9,6 @@ import type {
     AccessRuleActivation,
     AccessRuleDescription,
     AccessRuleResult,
-    AccessScenarioAssessment,
     ArtifactReference,
     Assertion,
     AssertionReference,
@@ -18,14 +17,11 @@ import type {
     Attribution,
     Change,
     ConceptModernization,
-    ContentChangeRequirement,
     ContentEvidenceSpan,
     ContextOperationResult,
     ContextResolution,
     CoverageReport,
     DecisionProposalOrigin,
-    DocumentAccessAssessment,
-    DocumentAccessAssessmentInput,
     DocumentAssessmentInput,
     DocumentAuditReport,
     DocumentGuideAssessment,
@@ -34,7 +30,6 @@ import type {
     DocumentResponseProfile,
     DocumentResponseProjection,
     DocumentUnmarkedSpan,
-    EffectiveDocumentTarget,
     EvaluationResult,
     Fix,
     GuideBreakdownEntry,
@@ -64,7 +59,6 @@ import type {
     SourceIdentity,
     SourceMetadata,
     SourceReference,
-    SubjectContextRequirement,
     ValidateResult,
     ValidationError,
     Vocabulary,
@@ -452,53 +446,6 @@ expectTypeOf<DocumentAssessmentInput>().toEqualTypeOf<{
     guideDeterminations?: GuideDeterminationInput;
     responseProfile?: DocumentResponseProfile;
 }>();
-expectTypeOf<EffectiveDocumentTarget>().toEqualTypeOf<{
-    basis: 'authored' | 'authoritative' | 'projected';
-    marking: string;
-    assertions: Assertion[];
-    authoredWhole?: string;
-    authoredParts: string[];
-    determinedGuideRequiredWhole?: string;
-    projectedGuideRequiredWhole?: string;
-}>();
-expectTypeOf<ContentChangeRequirement>().toEqualTypeOf<{
-    rule: RuleReference;
-    assertion: AssertionReference;
-    supportIds: string[];
-    instruction: string;
-    verificationRequired: true;
-}>();
-expectTypeOf<SubjectContextRequirement>().toEqualTypeOf<{
-    rule: RuleReference;
-    subjectPath: string;
-    contextPath: string;
-    operator: string;
-    acceptableValues?: unknown[];
-    instruction: string;
-}>();
-expectTypeOf<AccessScenarioAssessment>().toEqualTypeOf<{
-    basis: 'authored' | 'authoritative' | 'projected';
-    advisory: boolean;
-    status: 'granted' | 'denied' | 'not-evaluated';
-    target: EffectiveDocumentTarget | null;
-    decision?: AccessDecision;
-    contentRequirements?: ContentChangeRequirement[];
-    contextRequirements?: SubjectContextRequirement[];
-    limitations: AssessmentLimitation[];
-}>();
-expectTypeOf<DocumentAccessAssessment>().toEqualTypeOf<{
-    audit: DocumentAuditReport;
-    authored: AccessScenarioAssessment;
-    authoritative: AccessScenarioAssessment;
-    projected: AccessScenarioAssessment | null;
-}>();
-expectTypeOf<DocumentAccessAssessmentInput>().toEqualTypeOf<{
-    text: string;
-    guideDeterminations?: GuideDeterminationInput;
-    responseProfile?: DocumentResponseProfile;
-    userAttributes: Record<string, unknown>;
-    context?: Record<string, unknown>;
-}>();
 
 const artifact: ArtifactReference = {
     kind: 'guide',
@@ -582,14 +529,6 @@ const incompleteProjection: DocumentResponseProjection = {
     // @ts-expect-error Projection counts describe every normative dimension.
     counts: { nominations: 0 },
 };
-const unverifiedContentRequirement: ContentChangeRequirement = {
-    rule,
-    assertion: { categoryId: 'category', conceptId: 'concept' },
-    supportIds: [],
-    instruction: 'Revise supported content.',
-    // @ts-expect-error Content requirements always require re-evaluation.
-    verificationRequired: false,
-};
 
 void reproducibleWithoutSnapshot;
 void bestEffortWithSnapshot;
@@ -598,4 +537,3 @@ void invalidOffset;
 void manualWithoutReason;
 void invalidProfile;
 void incompleteProjection;
-void unverifiedContentRequirement;
