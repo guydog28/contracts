@@ -39,6 +39,13 @@ components:
           items:
             $ref: "#/components/schemas/AccessRuleResult"
           description: One result per rule in the policy, in policy order.
+        warnings:
+          type: array
+          items:
+            $ref: "#/components/schemas/Warning"
+          description: >-
+            Warnings from preparing and evaluating the target, including automatic changes. Present on granted and
+            denied decisions; empty when none apply.
         provenance:
           $ref: "#/components/schemas/SourceReference"
           description: >-
@@ -55,6 +62,7 @@ components:
       required:
         - granted
         - rules
+        - warnings
       description: >-
         Overall access decision with per-rule breakdown.
 
@@ -287,62 +295,6 @@ components:
         - comparisons
         - rule
       description: Result of evaluating a single qualified access rule entry.
-    AccessScenarioAssessment:
-      type: object
-      properties:
-        basis:
-          $ref: "#/components/schemas/AccessScenarioBasis"
-          description: Authority basis of this scenario.
-        advisory:
-          type: boolean
-          description: Whether the scenario is advisory rather than authoritative.
-        status:
-          $ref: "#/components/schemas/AccessScenarioStatus"
-          description: Closed evaluation status.
-        target:
-          anyOf:
-            - $ref: "#/components/schemas/EffectiveDocumentTarget"
-            - type: "null"
-          description: Effective target, or null when none can be derived.
-        decision:
-          $ref: "#/components/schemas/AccessDecision"
-          description: Access decision, omitted for summary and not-evaluated scenarios.
-        contentRequirements:
-          type: array
-          items:
-            $ref: "#/components/schemas/ContentChangeRequirement"
-          description: Traceable document-side requirements, omitted by summary.
-        contextRequirements:
-          type: array
-          items:
-            $ref: "#/components/schemas/SubjectContextRequirement"
-          description: Conditional relationship requirements, omitted by summary.
-        limitations:
-          type: array
-          items:
-            $ref: "#/components/schemas/AssessmentLimitation"
-          description: Scenario-specific limitations.
-      required:
-        - basis
-        - advisory
-        - status
-        - target
-        - limitations
-      description: Access result for one authored, authoritative, or projected target.
-    AccessScenarioBasis:
-      type: string
-      enum:
-        - authored
-        - authoritative
-        - projected
-      description: Authority basis used to construct an access scenario.
-    AccessScenarioStatus:
-      type: string
-      enum:
-        - granted
-        - denied
-        - not-evaluated
-      description: Closed evaluation status of an access scenario.
     AggregateResult:
       type: object
       properties:
@@ -1379,34 +1331,6 @@ components:
         - concept
         - when
       description: A category default evaluated before any category defaults are added.
-    ContentChangeRequirement:
-      type: object
-      properties:
-        rule:
-          $ref: "#/components/schemas/RuleReference"
-          description: Access rule that denied the effective target.
-        assertion:
-          $ref: "#/components/schemas/AssertionReference"
-          description: Blocking content-derived assertion.
-        supportIds:
-          type: array
-          items:
-            type: string
-          description: Assertion support records proving the content lineage.
-        instruction:
-          type: string
-          description: Conditional instruction that does not synthesize replacement text.
-        verificationRequired:
-          type: boolean
-          const: true
-          description: Revised content must always be reassessed.
-      required:
-        - rule
-        - assertion
-        - supportIds
-        - instruction
-        - verificationRequired
-      description: Traceable document-side route for causing an assertion to cease applying.
     ContentEvidenceSpan:
       type: object
       properties:
@@ -1520,28 +1444,6 @@ components:
         - result
         - operationLimitations
       description: Context envelope returned by a directional crosswalk translation.
-    ContextDocumentAccessAssessmentResult:
-      type: object
-      properties:
-        resolution:
-          $ref: "#/components/schemas/ContextResolution"
-          description: Single resolved composition used throughout the operation.
-        result:
-          $ref: "#/components/schemas/DocumentAccessAssessment"
-          description: Typed operation result.
-        operationLimitations:
-          type: array
-          items:
-            $ref: "#/components/schemas/AssessmentLimitation"
-          description: Limitations applying to the operation as a whole.
-        responseProjection:
-          $ref: "#/components/schemas/DocumentResponseProjection"
-          description: Projection metadata, present only for document operations.
-      required:
-        - resolution
-        - result
-        - operationLimitations
-      description: Resolved Context envelope returned by document access assessment.
     ContextDocumentAuditResult:
       type: object
       properties:
@@ -2545,31 +2447,6 @@ components:
         - scheme
         - schemes
       description: "Response body for GET /v1/ctx/{ctxId}/{version}: decomposed context."
-    CtxDocumentAssessAccessRequestBody:
-      type: object
-      properties:
-        text:
-          type: string
-          description: Full document text to audit before access is assessed.
-        userAttributes:
-          type: object
-          additionalProperties: {}
-          description: User attributes interpreted by the Context's access policy.
-        context:
-          type: object
-          additionalProperties: {}
-          description: Optional relationship attributes used with the user attributes.
-        guideDeterminations:
-          $ref: "#/components/schemas/GuideDeterminationInput"
-          description: Optional analyst decisions applied to nominations for this document.
-        responseProfile:
-          $ref: "#/components/schemas/DocumentResponseProfile"
-          description: Detail projection applied after all access scenarios are evaluated.
-      required:
-        - text
-        - userAttributes
-      additionalProperties: false
-      description: POST /v1/ctx/{ctxId}/{version?}/document/assess-access
     CtxDocumentAuditRequestBody:
       type: object
       properties:
@@ -3154,29 +3031,6 @@ components:
         - removed
         - common
       description: "Comparison of two assertion sets: which assertions were added, removed, or shared."
-    DocumentAccessAssessment:
-      type: object
-      properties:
-        audit:
-          $ref: "#/components/schemas/DocumentAuditReport"
-          description: Structural and guide audit used to build every scenario.
-        authored:
-          $ref: "#/components/schemas/AccessScenarioAssessment"
-          description: Decision based only on authored markings.
-        authoritative:
-          $ref: "#/components/schemas/AccessScenarioAssessment"
-          description: Decision including accepted findings and manual selections.
-        projected:
-          anyOf:
-            - $ref: "#/components/schemas/AccessScenarioAssessment"
-            - type: "null"
-          description: Advisory unresolved-nomination scenario when it adds an assertion.
-      required:
-        - audit
-        - authored
-        - authoritative
-        - projected
-      description: Three-scenario document access result with no fused grant or denial.
     DocumentAuditReport:
       type: object
       properties:
@@ -3499,42 +3353,6 @@ components:
           type: string
           description: Written after each value.
       description: Affix written around every value of a field, rather than once around all of them.
-    EffectiveDocumentTarget:
-      type: object
-      properties:
-        basis:
-          $ref: "#/components/schemas/AccessScenarioBasis"
-          description: Authority basis used to construct the target.
-        marking:
-          type: string
-          description: Scheme-rendered effective marking.
-        assertions:
-          type: array
-          items:
-            $ref: "#/components/schemas/Assertion"
-          description: >-
-            Effective assertions evaluated by access policy, listed in print order: the order `marking` places each
-            concept; a concept it leaves out appears where it would print.
-        authoredWhole:
-          type: string
-          description: Authored document-wide marking when present.
-        authoredParts:
-          type: array
-          items:
-            type: string
-          description: Authored part markings.
-        determinedGuideRequiredWhole:
-          type: string
-          description: Whole required by accepted/manual guide facts.
-        projectedGuideRequiredWhole:
-          type: string
-          description: Advisory whole additionally assuming unresolved nominations.
-      required:
-        - basis
-        - marking
-        - assertions
-        - authoredParts
-      description: Effective marking/assertion target evaluated in one access scenario.
     EmbeddedMarkingStyle:
       type: object
       properties:
@@ -6486,35 +6304,6 @@ components:
         not:
           required:
             - snapshotId
-    SubjectContextRequirement:
-      type: object
-      properties:
-        rule:
-          $ref: "#/components/schemas/RuleReference"
-          description: Access rule requiring the relationship.
-        subjectPath:
-          type: string
-          description: Immutable subject operand path.
-        contextPath:
-          type: string
-          description: Supplied context operand path.
-        operator:
-          type: string
-          description: Comparison operator.
-        acceptableValues:
-          type: array
-          items: {}
-          description: Context values that would satisfy the relationship, when known.
-        instruction:
-          type: string
-          description: Conditional explanation of the external-state prerequisite.
-      required:
-        - rule
-        - subjectPath
-        - contextPath
-        - operator
-        - instruction
-      description: Conditional external relationship needed by a subject-context comparison.
     SuggestResult:
       type: object
       properties:

@@ -9379,7 +9379,8 @@
                                 "ruleIndex": 3,
                                 "skipped": true
                             }
-                        ]
+                        ],
+                        "warnings": []
                     }
                 },
                 "headers": {
@@ -9591,6 +9592,12 @@
                                 "ruleIndex": 3,
                                 "skipped": false
                             }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
+                            }
                         ]
                     }
                 },
@@ -9801,6 +9808,12 @@
                                 },
                                 "ruleIndex": 3,
                                 "skipped": false
+                            }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
                             }
                         ]
                     }
@@ -10014,6 +10027,12 @@
                                 "ruleIndex": 3,
                                 "skipped": false
                             }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
+                            }
                         ]
                     }
                 },
@@ -10225,6 +10244,12 @@
                                 "ruleIndex": 3,
                                 "skipped": false
                             }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
+                            }
                         ]
                     }
                 },
@@ -10256,7 +10281,8 @@
                     "userAttributes": {
                         "clearance": "CONFIDENTIAL",
                         "recipient_organizations": [
-                            "CEDAR_VALLEY_DISTRICT"
+                            "CEDAR_VALLEY_DISTRICT",
+                            "STUDENT_TRANSPORTATION_SERVICES"
                         ],
                         "school_memberships": [
                             "OAKWOOD"
@@ -10488,7 +10514,8 @@
                                             "path": "recipient_organizations",
                                             "source": "subject",
                                             "value": [
-                                                "CEDAR_VALLEY_DISTRICT"
+                                                "CEDAR_VALLEY_DISTRICT",
+                                                "STUDENT_TRANSPORTATION_SERVICES"
                                             ]
                                         },
                                         "matched": true,
@@ -10499,6 +10526,28 @@
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "CEDAR_VALLEY_DISTRICT"
                                                 },
+                                                {
+                                                    "categoryId": "allow_sharing_with",
+                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
+                                                }
+                                            ],
+                                            "categoryId": "allow_sharing_with",
+                                            "source": "assertion"
+                                        }
+                                    },
+                                    {
+                                        "left": {
+                                            "path": "recipient_organizations",
+                                            "source": "subject",
+                                            "value": [
+                                                "CEDAR_VALLEY_DISTRICT",
+                                                "STUDENT_TRANSPORTATION_SERVICES"
+                                            ]
+                                        },
+                                        "matched": true,
+                                        "operator": "includes",
+                                        "right": {
+                                            "assertions": [
                                                 {
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
@@ -10522,6 +10571,12 @@
                                 },
                                 "ruleIndex": 3,
                                 "skipped": false
+                            }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
                             }
                         ]
                     }
@@ -10554,7 +10609,8 @@
                     "userAttributes": {
                         "clearance": "INTERNAL",
                         "recipient_organizations": [
-                            "CEDAR_VALLEY_DISTRICT"
+                            "CEDAR_VALLEY_DISTRICT",
+                            "STUDENT_TRANSPORTATION_SERVICES"
                         ],
                         "school_memberships": [
                             "OAKWOOD"
@@ -10790,7 +10846,8 @@
                                             "path": "recipient_organizations",
                                             "source": "subject",
                                             "value": [
-                                                "CEDAR_VALLEY_DISTRICT"
+                                                "CEDAR_VALLEY_DISTRICT",
+                                                "STUDENT_TRANSPORTATION_SERVICES"
                                             ]
                                         },
                                         "matched": true,
@@ -10801,6 +10858,28 @@
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "CEDAR_VALLEY_DISTRICT"
                                                 },
+                                                {
+                                                    "categoryId": "allow_sharing_with",
+                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
+                                                }
+                                            ],
+                                            "categoryId": "allow_sharing_with",
+                                            "source": "assertion"
+                                        }
+                                    },
+                                    {
+                                        "left": {
+                                            "path": "recipient_organizations",
+                                            "source": "subject",
+                                            "value": [
+                                                "CEDAR_VALLEY_DISTRICT",
+                                                "STUDENT_TRANSPORTATION_SERVICES"
+                                            ]
+                                        },
+                                        "matched": true,
+                                        "operator": "includes",
+                                        "right": {
+                                            "assertions": [
                                                 {
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
@@ -10824,6 +10903,12 @@
                                 },
                                 "ruleIndex": 3,
                                 "skipped": false
+                            }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
                             }
                         ]
                     }
@@ -10856,7 +10941,8 @@
                     "userAttributes": {
                         "clearance": "CONFIDENTIAL",
                         "recipient_organizations": [
-                            "CEDAR_VALLEY_DISTRICT"
+                            "CEDAR_VALLEY_DISTRICT",
+                            "STUDENT_TRANSPORTATION_SERVICES"
                         ],
                         "school_memberships": [
                             "OAKWOOD"
@@ -11090,7 +11176,8 @@
                                             "path": "recipient_organizations",
                                             "source": "subject",
                                             "value": [
-                                                "CEDAR_VALLEY_DISTRICT"
+                                                "CEDAR_VALLEY_DISTRICT",
+                                                "STUDENT_TRANSPORTATION_SERVICES"
                                             ]
                                         },
                                         "matched": true,
@@ -11101,6 +11188,28 @@
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "CEDAR_VALLEY_DISTRICT"
                                                 },
+                                                {
+                                                    "categoryId": "allow_sharing_with",
+                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
+                                                }
+                                            ],
+                                            "categoryId": "allow_sharing_with",
+                                            "source": "assertion"
+                                        }
+                                    },
+                                    {
+                                        "left": {
+                                            "path": "recipient_organizations",
+                                            "source": "subject",
+                                            "value": [
+                                                "CEDAR_VALLEY_DISTRICT",
+                                                "STUDENT_TRANSPORTATION_SERVICES"
+                                            ]
+                                        },
+                                        "matched": true,
+                                        "operator": "includes",
+                                        "right": {
+                                            "assertions": [
                                                 {
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
@@ -11124,6 +11233,12 @@
                                 },
                                 "ruleIndex": 3,
                                 "skipped": false
+                            }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
                             }
                         ]
                     }
@@ -11156,7 +11271,8 @@
                     "userAttributes": {
                         "clearance": "CONFIDENTIAL",
                         "recipient_organizations": [
-                            "CEDAR_VALLEY_DISTRICT"
+                            "CEDAR_VALLEY_DISTRICT",
+                            "STUDENT_TRANSPORTATION_SERVICES"
                         ],
                         "school_memberships": [
                             "RIVERSIDE"
@@ -11393,7 +11509,8 @@
                                             "path": "recipient_organizations",
                                             "source": "subject",
                                             "value": [
-                                                "CEDAR_VALLEY_DISTRICT"
+                                                "CEDAR_VALLEY_DISTRICT",
+                                                "STUDENT_TRANSPORTATION_SERVICES"
                                             ]
                                         },
                                         "matched": true,
@@ -11404,6 +11521,28 @@
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "CEDAR_VALLEY_DISTRICT"
                                                 },
+                                                {
+                                                    "categoryId": "allow_sharing_with",
+                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
+                                                }
+                                            ],
+                                            "categoryId": "allow_sharing_with",
+                                            "source": "assertion"
+                                        }
+                                    },
+                                    {
+                                        "left": {
+                                            "path": "recipient_organizations",
+                                            "source": "subject",
+                                            "value": [
+                                                "CEDAR_VALLEY_DISTRICT",
+                                                "STUDENT_TRANSPORTATION_SERVICES"
+                                            ]
+                                        },
+                                        "matched": true,
+                                        "operator": "includes",
+                                        "right": {
+                                            "assertions": [
                                                 {
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
@@ -11427,6 +11566,12 @@
                                 },
                                 "ruleIndex": 3,
                                 "skipped": false
+                            }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
                             }
                         ]
                     }
@@ -11714,6 +11859,30 @@
                                             "categoryId": "allow_sharing_with",
                                             "source": "assertion"
                                         }
+                                    },
+                                    {
+                                        "left": {
+                                            "path": "recipient_organizations",
+                                            "source": "subject",
+                                            "value": [
+                                                "COMMONWEALTH_EDUCATION_DEPARTMENT"
+                                            ]
+                                        },
+                                        "matched": false,
+                                        "missing": [
+                                            "STUDENT_TRANSPORTATION_SERVICES"
+                                        ],
+                                        "operator": "includes",
+                                        "right": {
+                                            "assertions": [
+                                                {
+                                                    "categoryId": "allow_sharing_with",
+                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
+                                                }
+                                            ],
+                                            "categoryId": "allow_sharing_with",
+                                            "source": "assertion"
+                                        }
                                     }
                                 ],
                                 "granted": false,
@@ -11730,6 +11899,12 @@
                                 },
                                 "ruleIndex": 3,
                                 "skipped": false
+                            }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
                             }
                         ]
                     }
@@ -12008,6 +12183,27 @@
                                             "categoryId": "allow_sharing_with",
                                             "source": "assertion"
                                         }
+                                    },
+                                    {
+                                        "left": {
+                                            "path": "recipient_organizations",
+                                            "source": "subject"
+                                        },
+                                        "matched": false,
+                                        "missing": [
+                                            "STUDENT_TRANSPORTATION_SERVICES"
+                                        ],
+                                        "operator": "includes",
+                                        "right": {
+                                            "assertions": [
+                                                {
+                                                    "categoryId": "allow_sharing_with",
+                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
+                                                }
+                                            ],
+                                            "categoryId": "allow_sharing_with",
+                                            "source": "assertion"
+                                        }
                                     }
                                 ],
                                 "granted": false,
@@ -12024,6 +12220,12 @@
                                 },
                                 "ruleIndex": 3,
                                 "skipped": false
+                            }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
                             }
                         ]
                     }
@@ -30642,7 +30844,8 @@
                     "userAttributes": {
                         "clearance": "CONFIDENTIAL",
                         "recipient_organizations": [
-                            "CEDAR_VALLEY_DISTRICT"
+                            "CEDAR_VALLEY_DISTRICT",
+                            "STUDENT_TRANSPORTATION_SERVICES"
                         ],
                         "school_memberships": [
                             "OAKWOOD"
@@ -30874,7 +31077,8 @@
                                             "path": "recipient_organizations",
                                             "source": "subject",
                                             "value": [
-                                                "CEDAR_VALLEY_DISTRICT"
+                                                "CEDAR_VALLEY_DISTRICT",
+                                                "STUDENT_TRANSPORTATION_SERVICES"
                                             ]
                                         },
                                         "matched": true,
@@ -30909,6 +31113,12 @@
                                 "ruleIndex": 3,
                                 "skipped": false
                             }
+                        ],
+                        "warnings": [
+                            {
+                                "kind": "notice",
+                                "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\""
+                            }
                         ]
                     }
                 },
@@ -30920,1322 +31130,6 @@
                 "statusDeclaredInContract": true
             },
             "summary": "access: assertions-granted"
-        },
-        {
-            "auth": {
-                "credential": "context-token",
-                "deployment": "open"
-            },
-            "id": "document.assess-access-granted",
-            "operationId": "ctxDocumentAssessAccess",
-            "request": {
-                "body": {
-                    "context": {
-                        "audit": {
-                            "resourceId": "comparison-resource",
-                            "userId": "comparison-user"
-                        }
-                    },
-                    "responseProfile": "summary",
-                    "text": "CONFIDENTIAL//CEDAR VALLEY DISTRICT\nPurchasing and student records.",
-                    "userAttributes": {
-                        "clearance": "CONFIDENTIAL",
-                        "recipient_organizations": [
-                            "CEDAR_VALLEY_DISTRICT"
-                        ],
-                        "school_memberships": [
-                            "OAKWOOD"
-                        ],
-                        "sensitive_content_permissions": [
-                            "FINANCIAL_INFORMATION",
-                            "STUDENT_INFORMATION"
-                        ]
-                    }
-                },
-                "headers": {
-                    "content-type": "application/json"
-                },
-                "method": "POST",
-                "path": "/v1/ctx/cedar-valley/1.0.0/document/assess-access",
-                "pathTemplate": "/v1/ctx/{ctxId}/{version}/document/assess-access"
-            },
-            "response": {
-                "body": {
-                    "operationLimitations": [],
-                    "resolution": {
-                        "artifacts": [
-                            {
-                                "id": "cedar-valley",
-                                "kind": "scheme",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley-guide",
-                                "kind": "guide",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley-access",
-                                "kind": "access",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley",
-                                "kind": "context",
-                                "version": "1.0.0"
-                            }
-                        ],
-                        "contextId": "cedar-valley",
-                        "requestedVersion": "1.0.0",
-                        "resolvedVersion": "1.0.0",
-                        "sources": []
-                    },
-                    "responseProjection": {
-                        "counts": {
-                            "accessRuleResults": 8,
-                            "contentRequirements": 0,
-                            "contextRequirements": 0,
-                            "evidenceSpans": 0,
-                            "guideUnits": 1,
-                            "nominations": 0
-                        },
-                        "detailsComplete": false,
-                        "omittedFields": [
-                            "/result/audit/guideAssessment/determinedRequiredWhole/detail",
-                            "/result/audit/guideAssessment/evaluation",
-                            "/result/audit/guideAssessment/evaluation/manualSelections/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/nominations/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/supportCatalog/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/units/*/determined/detail",
-                            "/result/audit/guideAssessment/evaluation/units/*/projected/detail",
-                            "/result/audit/guideAssessment/projectedRequiredWhole/detail",
-                            "/result/audit/parts/*/text",
-                            "/result/audit/unmarkedSpans/*/text",
-                            "/result/authored/contentRequirements",
-                            "/result/authored/contextRequirements",
-                            "/result/authored/decision",
-                            "/result/authoritative/contentRequirements",
-                            "/result/authoritative/contextRequirements",
-                            "/result/authoritative/decision"
-                        ],
-                        "profile": "summary"
-                    },
-                    "result": {
-                        "audit": {
-                            "documentDigest": "sha256:5ba55c35f0702a012f2992c435d833763bb073c8b063f3abc0bfe28df25dc75f",
-                            "guideAssessment": {
-                                "acceptedCount": 0,
-                                "determinedRequiredWhole": null,
-                                "determinedWholeCoverage": null,
-                                "evidenceSpanCount": 0,
-                                "nominationCount": 0,
-                                "projectedRequiredWhole": null,
-                                "projectedWholeCoverage": null,
-                                "rejectedCount": 0,
-                                "status": "no-findings",
-                                "unitCoverage": [
-                                    {
-                                        "determinedCoverage": null,
-                                        "projectedCoverage": null,
-                                        "scopeId": "document"
-                                    }
-                                ],
-                                "unresolvedCount": 0
-                            },
-                            "limitations": [],
-                            "markingRequirements": {
-                                "part": true,
-                                "whole": false
-                            },
-                            "overallVerdict": "procedural-gap",
-                            "parts": [],
-                            "proceduralFlags": [
-                                "unmarked-text-present"
-                            ],
-                            "unmarkedSpans": [
-                                {
-                                    "end": 67,
-                                    "offsetEncoding": "utf-8-bytes",
-                                    "start": 35
-                                }
-                            ],
-                            "vocabulary": {
-                                "marking": {
-                                    "plural": "File Markings",
-                                    "singular": "File Marking"
-                                }
-                            },
-                            "whole": "CONFIDENTIAL//CEDAR VALLEY DISTRICT",
-                            "wholeCoversParts": null,
-                            "wholeValidation": {
-                                "appliedFixes": [],
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "CONFIDENTIAL",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "CEDAR_VALLEY_DISTRICT",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    }
-                                ],
-                                "errors": [],
-                                "inputWasValid": true,
-                                "proposedFixes": [],
-                                "recognition": {
-                                    "inputFormat": "long",
-                                    "status": "complete",
-                                    "surface": "marking",
-                                    "unmatched": []
-                                },
-                                "rendered": "CONFIDENTIAL",
-                                "valid": true
-                            },
-                            "wholes": [
-                                {
-                                    "end": 35,
-                                    "marking": "CONFIDENTIAL//CEDAR VALLEY DISTRICT",
-                                    "offsetEncoding": "utf-8-bytes",
-                                    "start": 0
-                                }
-                            ]
-                        },
-                        "authored": {
-                            "advisory": false,
-                            "basis": "authored",
-                            "limitations": [],
-                            "status": "granted",
-                            "target": {
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "CONFIDENTIAL",
-                                        "confidence": "certain",
-                                        "source": "aggregate"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "CEDAR_VALLEY_DISTRICT",
-                                        "confidence": "inferred",
-                                        "source": "aggregate"
-                                    }
-                                ],
-                                "authoredParts": [],
-                                "authoredWhole": "CONFIDENTIAL//CEDAR VALLEY DISTRICT",
-                                "basis": "authored",
-                                "marking": "CONFIDENTIAL"
-                            }
-                        },
-                        "authoritative": {
-                            "advisory": false,
-                            "basis": "authoritative",
-                            "limitations": [],
-                            "status": "granted",
-                            "target": {
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "CONFIDENTIAL",
-                                        "confidence": "certain",
-                                        "source": "aggregate"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "CEDAR_VALLEY_DISTRICT",
-                                        "confidence": "inferred",
-                                        "source": "aggregate"
-                                    }
-                                ],
-                                "authoredParts": [],
-                                "authoredWhole": "CONFIDENTIAL//CEDAR VALLEY DISTRICT",
-                                "basis": "authoritative",
-                                "marking": "CONFIDENTIAL"
-                            }
-                        },
-                        "projected": null
-                    }
-                },
-                "headers": {
-                    "content-type": "application/json",
-                    "x-ezclassify-resolved-version": "1.0.0"
-                },
-                "status": 200,
-                "statusDeclaredInContract": true
-            },
-            "summary": "document: assess-access-granted"
-        },
-        {
-            "auth": {
-                "credential": "context-token",
-                "deployment": "open"
-            },
-            "id": "document.assess-access-denied",
-            "operationId": "ctxDocumentAssessAccess",
-            "request": {
-                "body": {
-                    "context": {
-                        "audit": {
-                            "resourceId": "comparison-resource",
-                            "userId": "comparison-user"
-                        }
-                    },
-                    "responseProfile": "summary",
-                    "text": "CONFIDENTIAL//CEDAR VALLEY DISTRICT\nPurchasing and student records.",
-                    "userAttributes": {}
-                },
-                "headers": {
-                    "content-type": "application/json"
-                },
-                "method": "POST",
-                "path": "/v1/ctx/cedar-valley/1.0.0/document/assess-access",
-                "pathTemplate": "/v1/ctx/{ctxId}/{version}/document/assess-access"
-            },
-            "response": {
-                "body": {
-                    "operationLimitations": [],
-                    "resolution": {
-                        "artifacts": [
-                            {
-                                "id": "cedar-valley",
-                                "kind": "scheme",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley-guide",
-                                "kind": "guide",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley-access",
-                                "kind": "access",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley",
-                                "kind": "context",
-                                "version": "1.0.0"
-                            }
-                        ],
-                        "contextId": "cedar-valley",
-                        "requestedVersion": "1.0.0",
-                        "resolvedVersion": "1.0.0",
-                        "sources": []
-                    },
-                    "responseProjection": {
-                        "counts": {
-                            "accessRuleResults": 8,
-                            "contentRequirements": 0,
-                            "contextRequirements": 0,
-                            "evidenceSpans": 0,
-                            "guideUnits": 1,
-                            "nominations": 0
-                        },
-                        "detailsComplete": false,
-                        "omittedFields": [
-                            "/result/audit/guideAssessment/determinedRequiredWhole/detail",
-                            "/result/audit/guideAssessment/evaluation",
-                            "/result/audit/guideAssessment/evaluation/manualSelections/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/nominations/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/supportCatalog/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/units/*/determined/detail",
-                            "/result/audit/guideAssessment/evaluation/units/*/projected/detail",
-                            "/result/audit/guideAssessment/projectedRequiredWhole/detail",
-                            "/result/audit/parts/*/text",
-                            "/result/audit/unmarkedSpans/*/text",
-                            "/result/authored/contentRequirements",
-                            "/result/authored/contextRequirements",
-                            "/result/authored/decision",
-                            "/result/authoritative/contentRequirements",
-                            "/result/authoritative/contextRequirements",
-                            "/result/authoritative/decision"
-                        ],
-                        "profile": "summary"
-                    },
-                    "result": {
-                        "audit": {
-                            "documentDigest": "sha256:5ba55c35f0702a012f2992c435d833763bb073c8b063f3abc0bfe28df25dc75f",
-                            "guideAssessment": {
-                                "acceptedCount": 0,
-                                "determinedRequiredWhole": null,
-                                "determinedWholeCoverage": null,
-                                "evidenceSpanCount": 0,
-                                "nominationCount": 0,
-                                "projectedRequiredWhole": null,
-                                "projectedWholeCoverage": null,
-                                "rejectedCount": 0,
-                                "status": "no-findings",
-                                "unitCoverage": [
-                                    {
-                                        "determinedCoverage": null,
-                                        "projectedCoverage": null,
-                                        "scopeId": "document"
-                                    }
-                                ],
-                                "unresolvedCount": 0
-                            },
-                            "limitations": [],
-                            "markingRequirements": {
-                                "part": true,
-                                "whole": false
-                            },
-                            "overallVerdict": "procedural-gap",
-                            "parts": [],
-                            "proceduralFlags": [
-                                "unmarked-text-present"
-                            ],
-                            "unmarkedSpans": [
-                                {
-                                    "end": 67,
-                                    "offsetEncoding": "utf-8-bytes",
-                                    "start": 35
-                                }
-                            ],
-                            "vocabulary": {
-                                "marking": {
-                                    "plural": "File Markings",
-                                    "singular": "File Marking"
-                                }
-                            },
-                            "whole": "CONFIDENTIAL//CEDAR VALLEY DISTRICT",
-                            "wholeCoversParts": null,
-                            "wholeValidation": {
-                                "appliedFixes": [],
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "CONFIDENTIAL",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "CEDAR_VALLEY_DISTRICT",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    }
-                                ],
-                                "errors": [],
-                                "inputWasValid": true,
-                                "proposedFixes": [],
-                                "recognition": {
-                                    "inputFormat": "long",
-                                    "status": "complete",
-                                    "surface": "marking",
-                                    "unmatched": []
-                                },
-                                "rendered": "CONFIDENTIAL",
-                                "valid": true
-                            },
-                            "wholes": [
-                                {
-                                    "end": 35,
-                                    "marking": "CONFIDENTIAL//CEDAR VALLEY DISTRICT",
-                                    "offsetEncoding": "utf-8-bytes",
-                                    "start": 0
-                                }
-                            ]
-                        },
-                        "authored": {
-                            "advisory": false,
-                            "basis": "authored",
-                            "limitations": [
-                                {
-                                    "code": "unsupported-authored-assertion",
-                                    "reason": "Rule protection-clearance denied on an assertion without traceable content support; lowering the marking cannot be recommended.",
-                                    "scope": "authored"
-                                },
-                                {
-                                    "code": "unsupported-authored-assertion",
-                                    "reason": "Rule recipient-organization denied on an assertion without traceable content support; lowering the marking cannot be recommended.",
-                                    "scope": "authored"
-                                }
-                            ],
-                            "status": "denied",
-                            "target": {
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "CONFIDENTIAL",
-                                        "confidence": "certain",
-                                        "source": "aggregate"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "CEDAR_VALLEY_DISTRICT",
-                                        "confidence": "inferred",
-                                        "source": "aggregate"
-                                    }
-                                ],
-                                "authoredParts": [],
-                                "authoredWhole": "CONFIDENTIAL//CEDAR VALLEY DISTRICT",
-                                "basis": "authored",
-                                "marking": "CONFIDENTIAL"
-                            }
-                        },
-                        "authoritative": {
-                            "advisory": false,
-                            "basis": "authoritative",
-                            "limitations": [
-                                {
-                                    "code": "unsupported-authored-assertion",
-                                    "reason": "Rule protection-clearance denied on an assertion without traceable content support; lowering the marking cannot be recommended.",
-                                    "scope": "authoritative"
-                                },
-                                {
-                                    "code": "unsupported-authored-assertion",
-                                    "reason": "Rule recipient-organization denied on an assertion without traceable content support; lowering the marking cannot be recommended.",
-                                    "scope": "authoritative"
-                                }
-                            ],
-                            "status": "denied",
-                            "target": {
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "CONFIDENTIAL",
-                                        "confidence": "certain",
-                                        "source": "aggregate"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "CEDAR_VALLEY_DISTRICT",
-                                        "confidence": "inferred",
-                                        "source": "aggregate"
-                                    }
-                                ],
-                                "authoredParts": [],
-                                "authoredWhole": "CONFIDENTIAL//CEDAR VALLEY DISTRICT",
-                                "basis": "authoritative",
-                                "marking": "CONFIDENTIAL"
-                            }
-                        },
-                        "projected": null
-                    }
-                },
-                "headers": {
-                    "content-type": "application/json",
-                    "x-ezclassify-resolved-version": "1.0.0"
-                },
-                "status": 200,
-                "statusDeclaredInContract": true
-            },
-            "summary": "document: assess-access-denied"
-        },
-        {
-            "auth": {
-                "credential": "context-token",
-                "deployment": "open"
-            },
-            "id": "document.assess-access-needs-completion",
-            "operationId": "ctxDocumentAssessAccess",
-            "request": {
-                "body": {
-                    "context": {
-                        "audit": {
-                            "resourceId": "comparison-resource",
-                            "userId": "comparison-user"
-                        }
-                    },
-                    "responseProfile": "summary",
-                    "text": "CONFIDENTIAL//FINANCIAL INFORMATION/STUDENT INFORMATION//OAKWOOD/PINECREST//STUDENT TRANSPORTATION SERVICES//DO NOT FORWARD/REDACT BEFORE RELEASE\nPurchasing and student records.",
-                    "userAttributes": {
-                        "clearance": "CONFIDENTIAL",
-                        "recipient_organizations": [
-                            "CEDAR_VALLEY_DISTRICT"
-                        ],
-                        "school_memberships": [
-                            "OAKWOOD"
-                        ],
-                        "sensitive_content_permissions": [
-                            "FINANCIAL_INFORMATION",
-                            "STUDENT_INFORMATION"
-                        ]
-                    }
-                },
-                "headers": {
-                    "content-type": "application/json"
-                },
-                "method": "POST",
-                "path": "/v1/ctx/cedar-valley/1.0.0/document/assess-access",
-                "pathTemplate": "/v1/ctx/{ctxId}/{version}/document/assess-access"
-            },
-            "response": {
-                "body": {
-                    "operationLimitations": [],
-                    "resolution": {
-                        "artifacts": [
-                            {
-                                "id": "cedar-valley",
-                                "kind": "scheme",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley-guide",
-                                "kind": "guide",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley-access",
-                                "kind": "access",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley",
-                                "kind": "context",
-                                "version": "1.0.0"
-                            }
-                        ],
-                        "contextId": "cedar-valley",
-                        "requestedVersion": "1.0.0",
-                        "resolvedVersion": "1.0.0",
-                        "sources": []
-                    },
-                    "responseProjection": {
-                        "counts": {
-                            "accessRuleResults": 8,
-                            "contentRequirements": 0,
-                            "contextRequirements": 0,
-                            "evidenceSpans": 0,
-                            "guideUnits": 1,
-                            "nominations": 0
-                        },
-                        "detailsComplete": false,
-                        "omittedFields": [
-                            "/result/audit/guideAssessment/determinedRequiredWhole/detail",
-                            "/result/audit/guideAssessment/evaluation",
-                            "/result/audit/guideAssessment/evaluation/manualSelections/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/nominations/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/supportCatalog/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/units/*/determined/detail",
-                            "/result/audit/guideAssessment/evaluation/units/*/projected/detail",
-                            "/result/audit/guideAssessment/projectedRequiredWhole/detail",
-                            "/result/audit/parts/*/text",
-                            "/result/audit/unmarkedSpans/*/text",
-                            "/result/authored/contentRequirements",
-                            "/result/authored/contextRequirements",
-                            "/result/authored/decision",
-                            "/result/authoritative/contentRequirements",
-                            "/result/authoritative/contextRequirements",
-                            "/result/authoritative/decision"
-                        ],
-                        "profile": "summary"
-                    },
-                    "result": {
-                        "audit": {
-                            "documentDigest": "sha256:29dd72d51808fc22f8b83ae4b7442d641bc63fcf2ed2e3aa3b52d5708438861c",
-                            "guideAssessment": {
-                                "acceptedCount": 0,
-                                "determinedRequiredWhole": null,
-                                "determinedWholeCoverage": null,
-                                "evidenceSpanCount": 0,
-                                "nominationCount": 0,
-                                "projectedRequiredWhole": null,
-                                "projectedWholeCoverage": null,
-                                "rejectedCount": 0,
-                                "status": "no-findings",
-                                "unitCoverage": [
-                                    {
-                                        "determinedCoverage": null,
-                                        "projectedCoverage": null,
-                                        "scopeId": "document"
-                                    }
-                                ],
-                                "unresolvedCount": 0
-                            },
-                            "limitations": [],
-                            "markingRequirements": {
-                                "part": true,
-                                "whole": false
-                            },
-                            "overallVerdict": "procedural-gap",
-                            "parts": [],
-                            "proceduralFlags": [
-                                "marking-needs-completion",
-                                "unmarked-text-present"
-                            ],
-                            "unmarkedSpans": [
-                                {
-                                    "end": 177,
-                                    "offsetEncoding": "utf-8-bytes",
-                                    "start": 145
-                                }
-                            ],
-                            "vocabulary": {
-                                "marking": {
-                                    "plural": "File Markings",
-                                    "singular": "File Marking"
-                                }
-                            },
-                            "whole": "CONFIDENTIAL//FINANCIAL INFORMATION/STUDENT INFORMATION//OAKWOOD/PINECREST//STUDENT TRANSPORTATION SERVICES//DO NOT FORWARD/REDACT BEFORE RELEASE",
-                            "wholeCoversParts": null,
-                            "wholeValidation": {
-                                "appliedFixes": [
-                                    {
-                                        "action": "add",
-                                        "add": [
-                                            {
-                                                "categoryId": "allow_sharing_with",
-                                                "conceptId": "CEDAR_VALLEY_DISTRICT"
-                                            }
-                                        ],
-                                        "message": "Rule \"nonpublic-is-internal-by-default\": added \"CEDAR_VALLEY_DISTRICT\" to category \"allow_sharing_with\"",
-                                        "ruleId": "nonpublic-is-internal-by-default",
-                                        "triggerConceptIds": [
-                                            "CONFIDENTIAL"
-                                        ]
-                                    }
-                                ],
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "CONFIDENTIAL",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "sensitive_content",
-                                        "conceptId": "FINANCIAL_INFORMATION",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "sensitive_content",
-                                        "conceptId": "STUDENT_INFORMATION",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "permitted_schools",
-                                        "conceptId": "OAKWOOD",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "permitted_schools",
-                                        "conceptId": "PINECREST",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "CEDAR_VALLEY_DISTRICT",
-                                        "confidence": "inferred",
-                                        "source": "infer",
-                                        "sourceRule": "nonpublic-is-internal-by-default"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "STUDENT_TRANSPORTATION_SERVICES",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "handling",
-                                        "conceptId": "DO_NOT_FORWARD",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "handling",
-                                        "conceptId": "REDACT_BEFORE_RELEASE",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    }
-                                ],
-                                "errors": [],
-                                "inputWasValid": true,
-                                "proposedFixes": [],
-                                "recognition": {
-                                    "inputFormat": "long",
-                                    "status": "complete",
-                                    "surface": "marking",
-                                    "unmatched": []
-                                },
-                                "rendered": "CONFIDENTIAL//FINANCIAL INFORMATION/STUDENT INFORMATION//OAKWOOD/PINECREST//STUDENT TRANSPORTATION SERVICES//DO NOT FORWARD/REDACT BEFORE RELEASE",
-                                "valid": true
-                            },
-                            "wholes": [
-                                {
-                                    "end": 145,
-                                    "marking": "CONFIDENTIAL//FINANCIAL INFORMATION/STUDENT INFORMATION//OAKWOOD/PINECREST//STUDENT TRANSPORTATION SERVICES//DO NOT FORWARD/REDACT BEFORE RELEASE",
-                                    "offsetEncoding": "utf-8-bytes",
-                                    "start": 0
-                                }
-                            ]
-                        },
-                        "authored": {
-                            "advisory": false,
-                            "basis": "authored",
-                            "limitations": [],
-                            "status": "granted",
-                            "target": {
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "CONFIDENTIAL",
-                                        "confidence": "certain",
-                                        "source": "aggregate"
-                                    },
-                                    {
-                                        "categoryId": "sensitive_content",
-                                        "conceptId": "FINANCIAL_INFORMATION",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "sensitive_content",
-                                        "conceptId": "STUDENT_INFORMATION",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "permitted_schools",
-                                        "conceptId": "OAKWOOD",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "permitted_schools",
-                                        "conceptId": "PINECREST",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "CEDAR_VALLEY_DISTRICT",
-                                        "confidence": "inferred",
-                                        "source": "aggregate"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "STUDENT_TRANSPORTATION_SERVICES",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "handling",
-                                        "conceptId": "DO_NOT_FORWARD",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "handling",
-                                        "conceptId": "REDACT_BEFORE_RELEASE",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    }
-                                ],
-                                "authoredParts": [],
-                                "authoredWhole": "CONFIDENTIAL//FINANCIAL INFORMATION/STUDENT INFORMATION//OAKWOOD/PINECREST//STUDENT TRANSPORTATION SERVICES//DO NOT FORWARD/REDACT BEFORE RELEASE",
-                                "basis": "authored",
-                                "marking": "CONFIDENTIAL//FINANCIAL INFORMATION/STUDENT INFORMATION//OAKWOOD/PINECREST//STUDENT TRANSPORTATION SERVICES//DO NOT FORWARD/REDACT BEFORE RELEASE"
-                            }
-                        },
-                        "authoritative": {
-                            "advisory": false,
-                            "basis": "authoritative",
-                            "limitations": [],
-                            "status": "granted",
-                            "target": {
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "CONFIDENTIAL",
-                                        "confidence": "certain",
-                                        "source": "aggregate"
-                                    },
-                                    {
-                                        "categoryId": "sensitive_content",
-                                        "conceptId": "FINANCIAL_INFORMATION",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "sensitive_content",
-                                        "conceptId": "STUDENT_INFORMATION",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "permitted_schools",
-                                        "conceptId": "OAKWOOD",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "permitted_schools",
-                                        "conceptId": "PINECREST",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "CEDAR_VALLEY_DISTRICT",
-                                        "confidence": "inferred",
-                                        "source": "aggregate"
-                                    },
-                                    {
-                                        "categoryId": "allow_sharing_with",
-                                        "conceptId": "STUDENT_TRANSPORTATION_SERVICES",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "handling",
-                                        "conceptId": "DO_NOT_FORWARD",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    },
-                                    {
-                                        "categoryId": "handling",
-                                        "conceptId": "REDACT_BEFORE_RELEASE",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    }
-                                ],
-                                "authoredParts": [],
-                                "authoredWhole": "CONFIDENTIAL//FINANCIAL INFORMATION/STUDENT INFORMATION//OAKWOOD/PINECREST//STUDENT TRANSPORTATION SERVICES//DO NOT FORWARD/REDACT BEFORE RELEASE",
-                                "basis": "authoritative",
-                                "marking": "CONFIDENTIAL//FINANCIAL INFORMATION/STUDENT INFORMATION//OAKWOOD/PINECREST//STUDENT TRANSPORTATION SERVICES//DO NOT FORWARD/REDACT BEFORE RELEASE"
-                            }
-                        },
-                        "projected": null
-                    }
-                },
-                "headers": {
-                    "content-type": "application/json",
-                    "x-ezclassify-resolved-version": "1.0.0"
-                },
-                "status": 200,
-                "statusDeclaredInContract": true
-            },
-            "summary": "document: assess-access-needs-completion"
-        },
-        {
-            "auth": {
-                "credential": "context-token",
-                "deployment": "open"
-            },
-            "id": "document.assess-access-unmarked",
-            "operationId": "ctxDocumentAssessAccess",
-            "request": {
-                "body": {
-                    "context": {
-                        "audit": {
-                            "resourceId": "comparison-resource",
-                            "userId": "comparison-user"
-                        }
-                    },
-                    "responseProfile": "summary",
-                    "text": "A file without an authored marking.",
-                    "userAttributes": {
-                        "clearance": "CONFIDENTIAL",
-                        "recipient_organizations": [
-                            "CEDAR_VALLEY_DISTRICT"
-                        ],
-                        "school_memberships": [
-                            "OAKWOOD"
-                        ],
-                        "sensitive_content_permissions": [
-                            "FINANCIAL_INFORMATION",
-                            "STUDENT_INFORMATION"
-                        ]
-                    }
-                },
-                "headers": {
-                    "content-type": "application/json"
-                },
-                "method": "POST",
-                "path": "/v1/ctx/cedar-valley/1.0.0/document/assess-access",
-                "pathTemplate": "/v1/ctx/{ctxId}/{version}/document/assess-access"
-            },
-            "response": {
-                "body": {
-                    "operationLimitations": [],
-                    "resolution": {
-                        "artifacts": [
-                            {
-                                "id": "cedar-valley",
-                                "kind": "scheme",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley-guide",
-                                "kind": "guide",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley-access",
-                                "kind": "access",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley",
-                                "kind": "context",
-                                "version": "1.0.0"
-                            }
-                        ],
-                        "contextId": "cedar-valley",
-                        "requestedVersion": "1.0.0",
-                        "resolvedVersion": "1.0.0",
-                        "sources": []
-                    },
-                    "responseProjection": {
-                        "counts": {
-                            "accessRuleResults": 0,
-                            "contentRequirements": 0,
-                            "contextRequirements": 0,
-                            "evidenceSpans": 0,
-                            "guideUnits": 1,
-                            "nominations": 0
-                        },
-                        "detailsComplete": false,
-                        "omittedFields": [
-                            "/result/audit/guideAssessment/determinedRequiredWhole/detail",
-                            "/result/audit/guideAssessment/evaluation",
-                            "/result/audit/guideAssessment/evaluation/manualSelections/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/nominations/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/supportCatalog/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/units/*/determined/detail",
-                            "/result/audit/guideAssessment/evaluation/units/*/projected/detail",
-                            "/result/audit/guideAssessment/projectedRequiredWhole/detail",
-                            "/result/audit/parts/*/text",
-                            "/result/audit/unmarkedSpans/*/text"
-                        ],
-                        "profile": "summary"
-                    },
-                    "result": {
-                        "audit": {
-                            "documentDigest": "sha256:241d7190cf1a30b289b820688c581b4ccac4b69f4bc2afb98683ae7e12ff90b5",
-                            "guideAssessment": {
-                                "acceptedCount": 0,
-                                "determinedRequiredWhole": null,
-                                "determinedWholeCoverage": null,
-                                "evidenceSpanCount": 0,
-                                "nominationCount": 0,
-                                "projectedRequiredWhole": null,
-                                "projectedWholeCoverage": null,
-                                "rejectedCount": 0,
-                                "status": "no-findings",
-                                "unitCoverage": [
-                                    {
-                                        "determinedCoverage": null,
-                                        "projectedCoverage": null,
-                                        "scopeId": "document"
-                                    }
-                                ],
-                                "unresolvedCount": 0
-                            },
-                            "limitations": [],
-                            "markingRequirements": {
-                                "part": true,
-                                "whole": false
-                            },
-                            "overallVerdict": "procedural-gap",
-                            "parts": [],
-                            "proceduralFlags": [
-                                "unmarked-text-present"
-                            ],
-                            "unmarkedSpans": [
-                                {
-                                    "end": 35,
-                                    "offsetEncoding": "utf-8-bytes",
-                                    "start": 0
-                                }
-                            ],
-                            "vocabulary": {
-                                "marking": {
-                                    "plural": "File Markings",
-                                    "singular": "File Marking"
-                                }
-                            },
-                            "whole": null,
-                            "wholeCoversParts": null,
-                            "wholeValidation": null,
-                            "wholes": []
-                        },
-                        "authored": {
-                            "advisory": false,
-                            "basis": "authored",
-                            "limitations": [
-                                {
-                                    "code": "missing-overall-marking",
-                                    "reason": "The document declares no marking, so access is not decided on its markings.",
-                                    "scope": "authored"
-                                }
-                            ],
-                            "status": "not-evaluated",
-                            "target": null
-                        },
-                        "authoritative": {
-                            "advisory": false,
-                            "basis": "authoritative",
-                            "limitations": [
-                                {
-                                    "code": "missing-overall-marking",
-                                    "reason": "The document declares no marking, so access is not decided on its markings.",
-                                    "scope": "authoritative"
-                                }
-                            ],
-                            "status": "not-evaluated",
-                            "target": null
-                        },
-                        "projected": null
-                    }
-                },
-                "headers": {
-                    "content-type": "application/json",
-                    "x-ezclassify-resolved-version": "1.0.0"
-                },
-                "status": 200,
-                "statusDeclaredInContract": true
-            },
-            "summary": "document: assess-access-unmarked"
-        },
-        {
-            "auth": {
-                "credential": "context-token",
-                "deployment": "open"
-            },
-            "id": "document.assess-access-conflicting-overall",
-            "operationId": "ctxDocumentAssessAccess",
-            "request": {
-                "body": {
-                    "context": {
-                        "audit": {
-                            "resourceId": "comparison-resource",
-                            "userId": "comparison-user"
-                        }
-                    },
-                    "responseProfile": "summary",
-                    "text": "PUBLIC\nCONFIDENTIAL//CEDAR VALLEY DISTRICT\nPurchasing and student records.",
-                    "userAttributes": {
-                        "clearance": "CONFIDENTIAL",
-                        "recipient_organizations": [
-                            "CEDAR_VALLEY_DISTRICT"
-                        ],
-                        "school_memberships": [
-                            "OAKWOOD"
-                        ],
-                        "sensitive_content_permissions": [
-                            "FINANCIAL_INFORMATION",
-                            "STUDENT_INFORMATION"
-                        ]
-                    }
-                },
-                "headers": {
-                    "content-type": "application/json"
-                },
-                "method": "POST",
-                "path": "/v1/ctx/cedar-valley/1.0.0/document/assess-access",
-                "pathTemplate": "/v1/ctx/{ctxId}/{version}/document/assess-access"
-            },
-            "response": {
-                "body": {
-                    "operationLimitations": [],
-                    "resolution": {
-                        "artifacts": [
-                            {
-                                "id": "cedar-valley",
-                                "kind": "scheme",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley-guide",
-                                "kind": "guide",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley-access",
-                                "kind": "access",
-                                "version": "1.0.0"
-                            },
-                            {
-                                "id": "cedar-valley",
-                                "kind": "context",
-                                "version": "1.0.0"
-                            }
-                        ],
-                        "contextId": "cedar-valley",
-                        "requestedVersion": "1.0.0",
-                        "resolvedVersion": "1.0.0",
-                        "sources": []
-                    },
-                    "responseProjection": {
-                        "counts": {
-                            "accessRuleResults": 0,
-                            "contentRequirements": 0,
-                            "contextRequirements": 0,
-                            "evidenceSpans": 0,
-                            "guideUnits": 1,
-                            "nominations": 0
-                        },
-                        "detailsComplete": false,
-                        "omittedFields": [
-                            "/result/audit/guideAssessment/determinedRequiredWhole/detail",
-                            "/result/audit/guideAssessment/evaluation",
-                            "/result/audit/guideAssessment/evaluation/manualSelections/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/nominations/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/supportCatalog/*/evidence/*/matched",
-                            "/result/audit/guideAssessment/evaluation/units/*/determined/detail",
-                            "/result/audit/guideAssessment/evaluation/units/*/projected/detail",
-                            "/result/audit/guideAssessment/projectedRequiredWhole/detail",
-                            "/result/audit/parts/*/text",
-                            "/result/audit/unmarkedSpans/*/text"
-                        ],
-                        "profile": "summary"
-                    },
-                    "result": {
-                        "audit": {
-                            "documentDigest": "sha256:cfa7218e70b097b4c3c2e629931b649e58f235b6973293402b15bc7b392eeff8",
-                            "guideAssessment": {
-                                "acceptedCount": 0,
-                                "determinedRequiredWhole": null,
-                                "determinedWholeCoverage": null,
-                                "evidenceSpanCount": 0,
-                                "nominationCount": 0,
-                                "projectedRequiredWhole": null,
-                                "projectedWholeCoverage": null,
-                                "rejectedCount": 0,
-                                "status": "no-findings",
-                                "unitCoverage": [
-                                    {
-                                        "determinedCoverage": null,
-                                        "projectedCoverage": null,
-                                        "scopeId": "document"
-                                    }
-                                ],
-                                "unresolvedCount": 0
-                            },
-                            "limitations": [],
-                            "markingRequirements": {
-                                "part": true,
-                                "whole": false
-                            },
-                            "overallVerdict": "procedural-gap",
-                            "parts": [],
-                            "proceduralFlags": [
-                                "unmarked-text-present",
-                                "whole-markings-inconsistent"
-                            ],
-                            "unmarkedSpans": [
-                                {
-                                    "end": 74,
-                                    "offsetEncoding": "utf-8-bytes",
-                                    "start": 42
-                                }
-                            ],
-                            "vocabulary": {
-                                "marking": {
-                                    "plural": "File Markings",
-                                    "singular": "File Marking"
-                                }
-                            },
-                            "whole": "PUBLIC",
-                            "wholeCoversParts": null,
-                            "wholeValidation": {
-                                "appliedFixes": [],
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "PUBLIC",
-                                        "confidence": "certain",
-                                        "source": "parse"
-                                    }
-                                ],
-                                "errors": [],
-                                "inputWasValid": true,
-                                "proposedFixes": [],
-                                "recognition": {
-                                    "status": "complete",
-                                    "surface": "marking",
-                                    "unmatched": []
-                                },
-                                "rendered": "PUBLIC",
-                                "valid": true
-                            },
-                            "wholes": [
-                                {
-                                    "end": 6,
-                                    "marking": "PUBLIC",
-                                    "offsetEncoding": "utf-8-bytes",
-                                    "start": 0
-                                },
-                                {
-                                    "end": 42,
-                                    "marking": "CONFIDENTIAL//CEDAR VALLEY DISTRICT",
-                                    "offsetEncoding": "utf-8-bytes",
-                                    "start": 7
-                                }
-                            ]
-                        },
-                        "authored": {
-                            "advisory": false,
-                            "basis": "authored",
-                            "limitations": [
-                                {
-                                    "code": "conflicting-overall-markings",
-                                    "reason": "The document declares overall markings that disagree: PUBLIC, CONFIDENTIAL.",
-                                    "scope": "authored"
-                                }
-                            ],
-                            "status": "not-evaluated",
-                            "target": {
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "PUBLIC",
-                                        "confidence": "certain",
-                                        "source": "aggregate"
-                                    }
-                                ],
-                                "authoredParts": [],
-                                "authoredWhole": "PUBLIC",
-                                "basis": "authored",
-                                "marking": "PUBLIC"
-                            }
-                        },
-                        "authoritative": {
-                            "advisory": false,
-                            "basis": "authoritative",
-                            "limitations": [
-                                {
-                                    "code": "conflicting-overall-markings",
-                                    "reason": "The document declares overall markings that disagree: PUBLIC, CONFIDENTIAL.",
-                                    "scope": "authoritative"
-                                }
-                            ],
-                            "status": "not-evaluated",
-                            "target": {
-                                "assertions": [
-                                    {
-                                        "categoryId": "level",
-                                        "conceptId": "PUBLIC",
-                                        "confidence": "certain",
-                                        "source": "aggregate"
-                                    }
-                                ],
-                                "authoredParts": [],
-                                "authoredWhole": "PUBLIC",
-                                "basis": "authoritative",
-                                "marking": "PUBLIC"
-                            }
-                        },
-                        "projected": null
-                    }
-                },
-                "headers": {
-                    "content-type": "application/json",
-                    "x-ezclassify-resolved-version": "1.0.0"
-                },
-                "status": 200,
-                "statusDeclaredInContract": true
-            },
-            "summary": "document: assess-access-conflicting-overall"
         },
         {
             "auth": {

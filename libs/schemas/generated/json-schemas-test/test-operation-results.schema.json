@@ -49,9 +49,16 @@
                         "$ref": "#/definitions/AccessRuleResult"
                     },
                     "type": "array"
+                },
+                "warnings": {
+                    "description": "Warnings from preparing and evaluating the target, including automatic changes. Present on granted and denied decisions; empty when none apply.",
+                    "items": {
+                        "$ref": "#/definitions/Warning"
+                    },
+                    "type": "array"
                 }
             },
-            "required": ["granted", "rules"],
+            "required": ["granted", "rules", "warnings"],
             "type": "object"
         },
         "AccessOperand": {
@@ -172,78 +179,6 @@
                 "rule"
             ],
             "type": "object"
-        },
-        "AccessScenarioAssessment": {
-            "additionalProperties": false,
-            "description": "Access result for one authored, authoritative, or projected target.",
-            "properties": {
-                "advisory": {
-                    "description": "Whether the scenario is advisory rather than authoritative.",
-                    "type": "boolean"
-                },
-                "basis": {
-                    "$ref": "#/definitions/AccessScenarioBasis",
-                    "description": "Authority basis of this scenario."
-                },
-                "contentRequirements": {
-                    "description": "Traceable document-side requirements, omitted by summary.",
-                    "items": {
-                        "$ref": "#/definitions/ContentChangeRequirement"
-                    },
-                    "type": "array"
-                },
-                "contextRequirements": {
-                    "description": "Conditional relationship requirements, omitted by summary.",
-                    "items": {
-                        "$ref": "#/definitions/SubjectContextRequirement"
-                    },
-                    "type": "array"
-                },
-                "decision": {
-                    "$ref": "#/definitions/AccessDecision",
-                    "description": "Access decision, omitted for summary and not-evaluated scenarios."
-                },
-                "limitations": {
-                    "description": "Scenario-specific limitations.",
-                    "items": {
-                        "$ref": "#/definitions/AssessmentLimitation"
-                    },
-                    "type": "array"
-                },
-                "status": {
-                    "$ref": "#/definitions/AccessScenarioStatus",
-                    "description": "Closed evaluation status."
-                },
-                "target": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/EffectiveDocumentTarget"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Effective target, or null when none can be derived."
-                }
-            },
-            "required": [
-                "basis",
-                "advisory",
-                "status",
-                "target",
-                "limitations"
-            ],
-            "type": "object"
-        },
-        "AccessScenarioBasis": {
-            "description": "Authority basis used to construct an access scenario.",
-            "enum": ["authored", "authoritative", "projected"],
-            "type": "string"
-        },
-        "AccessScenarioStatus": {
-            "description": "Closed evaluation status of an access scenario.",
-            "enum": ["granted", "denied", "not-evaluated"],
-            "type": "string"
         },
         "AggregateResult": {
             "additionalProperties": false,
@@ -751,44 +686,6 @@
             "required": ["id"],
             "type": "object"
         },
-        "ContentChangeRequirement": {
-            "additionalProperties": false,
-            "description": "Traceable document-side route for causing an assertion to cease applying.",
-            "properties": {
-                "assertion": {
-                    "$ref": "#/definitions/AssertionReference",
-                    "description": "Blocking content-derived assertion."
-                },
-                "instruction": {
-                    "description": "Conditional instruction that does not synthesize replacement text.",
-                    "type": "string"
-                },
-                "rule": {
-                    "$ref": "#/definitions/RuleReference",
-                    "description": "Access rule that denied the effective target."
-                },
-                "supportIds": {
-                    "description": "Assertion support records proving the content lineage.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "verificationRequired": {
-                    "const": true,
-                    "description": "Revised content must always be reassessed.",
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "rule",
-                "assertion",
-                "supportIds",
-                "instruction",
-                "verificationRequired"
-            ],
-            "type": "object"
-        },
         "ContentEvidenceSpan": {
             "additionalProperties": false,
             "description": "Evidence range in the exact accepted UTF-8 document bytes.",
@@ -866,33 +763,6 @@
                 },
                 "result": {
                     "$ref": "#/definitions/CrosswalkTranslationResult",
-                    "description": "Typed operation result."
-                }
-            },
-            "required": ["resolution", "result", "operationLimitations"],
-            "type": "object"
-        },
-        "ContextOperationResult<DocumentAccessAssessment>": {
-            "additionalProperties": false,
-            "description": "Concrete Context operation envelope shared by local and remote surfaces.",
-            "properties": {
-                "operationLimitations": {
-                    "description": "Limitations applying to the operation as a whole.",
-                    "items": {
-                        "$ref": "#/definitions/AssessmentLimitation"
-                    },
-                    "type": "array"
-                },
-                "resolution": {
-                    "$ref": "#/definitions/ContextResolution",
-                    "description": "Single resolved composition used throughout the operation."
-                },
-                "responseProjection": {
-                    "$ref": "#/definitions/DocumentResponseProjection",
-                    "description": "Projection metadata, present only for document operations."
-                },
-                "result": {
-                    "$ref": "#/definitions/DocumentAccessAssessment",
                     "description": "Typed operation result."
                 }
             },
@@ -1385,37 +1255,6 @@
             "enum": ["analyst-authored", "agent-drafted", "host-imported"],
             "type": "string"
         },
-        "DocumentAccessAssessment": {
-            "additionalProperties": false,
-            "description": "Three-scenario document access result with no fused grant or denial.",
-            "properties": {
-                "audit": {
-                    "$ref": "#/definitions/DocumentAuditReport",
-                    "description": "Structural and guide audit used to build every scenario."
-                },
-                "authored": {
-                    "$ref": "#/definitions/AccessScenarioAssessment",
-                    "description": "Decision based only on authored markings."
-                },
-                "authoritative": {
-                    "$ref": "#/definitions/AccessScenarioAssessment",
-                    "description": "Decision including accepted findings and manual selections."
-                },
-                "projected": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/AccessScenarioAssessment"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Advisory unresolved-nomination scenario when it adds an assertion."
-                }
-            },
-            "required": ["audit", "authored", "authoritative", "projected"],
-            "type": "object"
-        },
         "DocumentAuditReport": {
             "additionalProperties": false,
             "description": "Authored structural and analyst-determined guide audit of one document.",
@@ -1821,48 +1660,6 @@
                 }
             },
             "required": ["marking", "start", "end", "offsetEncoding"],
-            "type": "object"
-        },
-        "EffectiveDocumentTarget": {
-            "additionalProperties": false,
-            "description": "Effective marking/assertion target evaluated in one access scenario.",
-            "properties": {
-                "assertions": {
-                    "description": "Effective assertions evaluated by access policy, listed in print order: the order `marking` places each concept; a concept it leaves out appears where it would print.",
-                    "items": {
-                        "$ref": "#/definitions/Assertion"
-                    },
-                    "type": "array"
-                },
-                "authoredParts": {
-                    "description": "Authored part markings.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "authoredWhole": {
-                    "description": "Authored document-wide marking when present.",
-                    "type": "string"
-                },
-                "basis": {
-                    "$ref": "#/definitions/AccessScenarioBasis",
-                    "description": "Authority basis used to construct the target."
-                },
-                "determinedGuideRequiredWhole": {
-                    "description": "Whole required by accepted/manual guide facts.",
-                    "type": "string"
-                },
-                "marking": {
-                    "description": "Scheme-rendered effective marking.",
-                    "type": "string"
-                },
-                "projectedGuideRequiredWhole": {
-                    "description": "Advisory whole additionally assuming unresolved nominations.",
-                    "type": "string"
-                }
-            },
-            "required": ["basis", "marking", "assertions", "authoredParts"],
             "type": "object"
         },
         "EvaluationResult": {
@@ -3658,45 +3455,6 @@
             ],
             "description": "Records source identity and mandatory attribution for an operation."
         },
-        "SubjectContextRequirement": {
-            "additionalProperties": false,
-            "description": "Conditional external relationship needed by a subject-context comparison.",
-            "properties": {
-                "acceptableValues": {
-                    "description": "Context values that would satisfy the relationship, when known.",
-                    "items": {},
-                    "type": "array"
-                },
-                "contextPath": {
-                    "description": "Supplied context operand path.",
-                    "type": "string"
-                },
-                "instruction": {
-                    "description": "Conditional explanation of the external-state prerequisite.",
-                    "type": "string"
-                },
-                "operator": {
-                    "description": "Comparison operator.",
-                    "type": "string"
-                },
-                "rule": {
-                    "$ref": "#/definitions/RuleReference",
-                    "description": "Access rule requiring the relationship."
-                },
-                "subjectPath": {
-                    "description": "Immutable subject operand path.",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "rule",
-                "subjectPath",
-                "contextPath",
-                "operator",
-                "instruction"
-            ],
-            "type": "object"
-        },
         "SuggestResult": {
             "additionalProperties": false,
             "description": "What suggest answers: the concepts a picker may offer, and nothing about the marking itself.\n\nHow the current marking reads and whether it stands are what validate and process answer, and suggest does not repeat them. A caller that wants both in one round trip asks process for them with `suggestFor`.",
@@ -4209,10 +3967,6 @@
             "$ref": "#/definitions/AggregateResult",
             "description": "The result of an `aggregate` case."
         },
-        "assessDocumentAccess": {
-            "$ref": "#/definitions/ContextOperationResult%3CDocumentAccessAssessment%3E",
-            "description": "The result of an `assessDocumentAccess` case."
-        },
         "auditDocument": {
             "$ref": "#/definitions/ContextOperationResult%3CDocumentAuditReport%3E",
             "description": "The result of an `auditDocument` case."
@@ -4278,7 +4032,6 @@
         "guideEvaluate",
         "checkAccess",
         "auditDocument",
-        "assessDocumentAccess",
         "translate"
     ],
     "type": "object"

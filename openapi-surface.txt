@@ -16,7 +16,6 @@ POST /v1/ctx/{ctxId}/{version}/access/check ctxAccessCheck
 POST /v1/ctx/{ctxId}/{version}/access/describe-requirements ctxAccessDescribeRequirements
 POST /v1/ctx/{ctxId}/{version}/access/describe-rule ctxAccessDescribeRule
 POST /v1/ctx/{ctxId}/{version}/crosswalk/translate ctxCrosswalkTranslate
-POST /v1/ctx/{ctxId}/{version}/document/assess-access ctxDocumentAssessAccess
 POST /v1/ctx/{ctxId}/{version}/document/audit ctxDocumentAudit
 POST /v1/ctx/{ctxId}/{version}/guide/describe-rule ctxGuideDescribeRule
 POST /v1/ctx/{ctxId}/{version}/guide/evaluate ctxGuideEvaluate

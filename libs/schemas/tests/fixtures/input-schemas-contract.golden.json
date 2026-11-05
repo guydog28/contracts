@@ -6083,7 +6083,6 @@
                     "guideEvaluate",
                     "checkAccess",
                     "auditDocument",
-                    "assessDocumentAccess",
                     "translate"
                 ],
                 "type": "string"
