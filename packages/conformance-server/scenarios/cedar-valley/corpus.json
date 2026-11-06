@@ -10534,28 +10534,6 @@
                                             "categoryId": "allow_sharing_with",
                                             "source": "assertion"
                                         }
-                                    },
-                                    {
-                                        "left": {
-                                            "path": "recipient_organizations",
-                                            "source": "subject",
-                                            "value": [
-                                                "CEDAR_VALLEY_DISTRICT",
-                                                "STUDENT_TRANSPORTATION_SERVICES"
-                                            ]
-                                        },
-                                        "matched": true,
-                                        "operator": "includes",
-                                        "right": {
-                                            "assertions": [
-                                                {
-                                                    "categoryId": "allow_sharing_with",
-                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
-                                                }
-                                            ],
-                                            "categoryId": "allow_sharing_with",
-                                            "source": "assertion"
-                                        }
                                     }
                                 ],
                                 "granted": true,
@@ -10866,28 +10844,6 @@
                                             "categoryId": "allow_sharing_with",
                                             "source": "assertion"
                                         }
-                                    },
-                                    {
-                                        "left": {
-                                            "path": "recipient_organizations",
-                                            "source": "subject",
-                                            "value": [
-                                                "CEDAR_VALLEY_DISTRICT",
-                                                "STUDENT_TRANSPORTATION_SERVICES"
-                                            ]
-                                        },
-                                        "matched": true,
-                                        "operator": "includes",
-                                        "right": {
-                                            "assertions": [
-                                                {
-                                                    "categoryId": "allow_sharing_with",
-                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
-                                                }
-                                            ],
-                                            "categoryId": "allow_sharing_with",
-                                            "source": "assertion"
-                                        }
                                     }
                                 ],
                                 "granted": true,
@@ -11188,28 +11144,6 @@
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "CEDAR_VALLEY_DISTRICT"
                                                 },
-                                                {
-                                                    "categoryId": "allow_sharing_with",
-                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
-                                                }
-                                            ],
-                                            "categoryId": "allow_sharing_with",
-                                            "source": "assertion"
-                                        }
-                                    },
-                                    {
-                                        "left": {
-                                            "path": "recipient_organizations",
-                                            "source": "subject",
-                                            "value": [
-                                                "CEDAR_VALLEY_DISTRICT",
-                                                "STUDENT_TRANSPORTATION_SERVICES"
-                                            ]
-                                        },
-                                        "matched": true,
-                                        "operator": "includes",
-                                        "right": {
-                                            "assertions": [
                                                 {
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
@@ -11529,28 +11463,6 @@
                                             "categoryId": "allow_sharing_with",
                                             "source": "assertion"
                                         }
-                                    },
-                                    {
-                                        "left": {
-                                            "path": "recipient_organizations",
-                                            "source": "subject",
-                                            "value": [
-                                                "CEDAR_VALLEY_DISTRICT",
-                                                "STUDENT_TRANSPORTATION_SERVICES"
-                                            ]
-                                        },
-                                        "matched": true,
-                                        "operator": "includes",
-                                        "right": {
-                                            "assertions": [
-                                                {
-                                                    "categoryId": "allow_sharing_with",
-                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
-                                                }
-                                            ],
-                                            "categoryId": "allow_sharing_with",
-                                            "source": "assertion"
-                                        }
                                     }
                                 ],
                                 "granted": true,
@@ -11859,30 +11771,6 @@
                                             "categoryId": "allow_sharing_with",
                                             "source": "assertion"
                                         }
-                                    },
-                                    {
-                                        "left": {
-                                            "path": "recipient_organizations",
-                                            "source": "subject",
-                                            "value": [
-                                                "COMMONWEALTH_EDUCATION_DEPARTMENT"
-                                            ]
-                                        },
-                                        "matched": false,
-                                        "missing": [
-                                            "STUDENT_TRANSPORTATION_SERVICES"
-                                        ],
-                                        "operator": "includes",
-                                        "right": {
-                                            "assertions": [
-                                                {
-                                                    "categoryId": "allow_sharing_with",
-                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
-                                                }
-                                            ],
-                                            "categoryId": "allow_sharing_with",
-                                            "source": "assertion"
-                                        }
                                     }
                                 ],
                                 "granted": false,
@@ -12175,27 +12063,6 @@
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "CEDAR_VALLEY_DISTRICT"
                                                 },
-                                                {
-                                                    "categoryId": "allow_sharing_with",
-                                                    "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
-                                                }
-                                            ],
-                                            "categoryId": "allow_sharing_with",
-                                            "source": "assertion"
-                                        }
-                                    },
-                                    {
-                                        "left": {
-                                            "path": "recipient_organizations",
-                                            "source": "subject"
-                                        },
-                                        "matched": false,
-                                        "missing": [
-                                            "STUDENT_TRANSPORTATION_SERVICES"
-                                        ],
-                                        "operator": "includes",
-                                        "right": {
-                                            "assertions": [
                                                 {
                                                     "categoryId": "allow_sharing_with",
                                                     "conceptId": "STUDENT_TRANSPORTATION_SERVICES"
