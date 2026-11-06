@@ -7,6 +7,7 @@ import type {
     Assertion,
     ContextAdapter,
     ContextCompositionPresence,
+    ConceptView,
     ContextOperationResult,
     CrosswalkTranslationResult,
     DiffResult,
@@ -16,6 +17,8 @@ import type {
     GuideEngineAdapter,
     LocalAccessEngineAdapter,
     LocalContextAdapter,
+    LocalContextSchemeEngineAdapter,
+    LocalContextGuideEngineAdapter,
     LocalGuideEngineAdapter,
     LocalSchemeEngineAdapter,
     MaybePromise,
@@ -275,7 +278,7 @@ expectTypeOf(context.scheme.process('X')).toEqualTypeOf<
 expectTypeOf(context.compositionPresence).toEqualTypeOf<
     ContextCompositionPresence | undefined
 >();
-expectTypeOf(localContext.scheme).toMatchTypeOf<LocalSchemeEngineAdapter>();
+expectTypeOf(localContext.scheme).toMatchTypeOf<LocalContextSchemeEngineAdapter>();
 expectTypeOf(
     remoteContext.scheme,
 ).toMatchTypeOf<RemoteContextSchemeEngineAdapter>();
@@ -322,3 +325,39 @@ expectTypeOf(
         signal: abort,
     }),
 ).toEqualTypeOf<Promise<RenderResult>>();
+
+// A local Context owns its composition just as a remote Context does. Its
+// public views are queries, not mutable standalone engine instances.
+expectTypeOf<LocalContextSchemeEngineAdapter>().not.toHaveProperty('loadScheme');
+expectTypeOf<LocalContextSchemeEngineAdapter>().not.toHaveProperty('loadLayer');
+expectTypeOf<LocalContextSchemeEngineAdapter>().not.toHaveProperty('unloadScheme');
+expectTypeOf<LocalContextSchemeEngineAdapter>().not.toHaveProperty('unloadLayer');
+expectTypeOf(localContext.scheme.process('X')).toEqualTypeOf<ProcessResult>();
+expectTypeOf(localContext.scheme.aggregateAssertions([assertions])).toEqualTypeOf<AggregateResult>();
+// A standalone scheme adapter has selector-bearing render arguments and is
+// deliberately not interchangeable with the immutable Context query surface.
+// @ts-expect-error Standalone render takes a scheme selector before its options.
+const boundStandaloneScheme: LocalContextSchemeEngineAdapter = local;
+void boundStandaloneScheme;
+const boundStandaloneGuide: LocalContextGuideEngineAdapter = localGuide;
+void boundStandaloneGuide;
+expectTypeOf<LocalContextGuideEngineAdapter>().not.toHaveProperty('evaluateText');
+declare const contextGuide: LocalContextGuideEngineAdapter;
+expectTypeOf(contextGuide.evaluate('guide', ['rule'])).toEqualTypeOf<EvaluationResult>();
+expectTypeOf(contextGuide.evaluateMany(['rule'])).toEqualTypeOf<EvaluationResult>();
+// @ts-expect-error A Context view cannot select an unrelated scheme.
+localContext.scheme.process('X', 'another-scheme');
+// @ts-expect-error Context evaluation never accepts a supplied processor.
+contextGuide.evaluate(['rule'], {});
+
+expectTypeOf(localContext.scheme.getConceptsInCategory('category')).toEqualTypeOf<ConceptView[]>();
+expectTypeOf(localContext.scheme.getConceptsInCategory('category', { nested: true })).toEqualTypeOf<Array<{ concept: ConceptView; depth: number }>>();
+// @ts-expect-error Context category queries cannot select another scheme.
+localContext.scheme.getConceptsInCategory('category', 'another-scheme');
+
+expectTypeOf(localContext.scheme.diff('A', 'B', { inputFormat: 'banner', signal: abort })).toEqualTypeOf<DiffResult>();
+// @ts-expect-error A local identity comparison does not render an output.
+localContext.scheme.diff('A', 'B', { outputFormat: 'banner' });
+
+// Disposing a bound view would invalidate sibling views; only Context owns it.
+expectTypeOf<LocalContextSchemeEngineAdapter>().not.toHaveProperty('destroy');

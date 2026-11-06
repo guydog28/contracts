@@ -220,6 +220,8 @@
     "LayerRemovalDoc",
     "LocalAccessEngineAdapter",
     "LocalContextAdapter",
+    "LocalContextGuideEngineAdapter",
+    "LocalContextSchemeEngineAdapter",
     "LocalGuideEngineAdapter",
     "LocalSchemeEngineAdapter",
     "ManualGuideSelection",

@@ -2824,14 +2824,62 @@ export interface ContextCompositionPresence {
 /**
  * The marking surface exposed by a resolved Context.
  *
- * Local Contexts may expose the full in-process adapter because their
- * composition is already loaded. Remote Contexts expose only operations that
- * run against the Context chosen at client construction; they do not expose
- * scheme-addressed lifecycle or operation overloads.
+ * A Context owns its composition. Both local and remote views expose only
+ * operations bound to that composition, without lifecycle mutation or a
+ * scheme selector in an operation's argument position.
  */
 export type ContextSchemeEngineAdapter =
-    | LocalSchemeEngineAdapter
+    | LocalContextSchemeEngineAdapter
     | RemoteContextSchemeEngineAdapter;
+
+/** Preserve an operation's arguments while requiring its result immediately. */
+type SynchronousContextOperations<T> = {
+    [K in keyof T]: T[K] extends (...args: infer A) => infer R
+        ? (...args: A) => Awaited<R>
+        : T[K];
+};
+
+/**
+ * Marking operations bound to one local, immutable Context.
+ *
+ * The remote Context contract owns the selector-free argument shapes. The
+ * local view answers those same operations synchronously; the Context owns
+ * composition construction and disposal, rather than the scheme view.
+ */
+export type LocalContextSchemeEngineAdapter =
+    SynchronousContextOperations<
+        Omit<RemoteContextSchemeEngineAdapter,
+            'getConceptsInCategory' | 'getFormatCoverage' | 'diff' | 'destroy'>
+    > & {
+        /** Return the concepts in the named category. */
+        getConceptsInCategory(categoryId: string): ConceptView[];
+        /** Return category concepts with their display-tree depth. */
+        getConceptsInCategory(
+            categoryId: string,
+            options: { nested: true },
+        ): Array<{ concept: ConceptView; depth: number }>;
+        /** Describe input and rendering coverage for a format. */
+        getFormatCoverage(formatId?: string): FormatCoverage;
+        /** Compare fact identity using the format both inputs are written in. */
+        diff(
+            a: string,
+            b: string,
+            options?: Omit<
+                NonNullable<Parameters<RemoteContextSchemeEngineAdapter['diff']>[2]>,
+                'outputFormat'
+            >,
+        ): DiffResult;
+    };
+
+/**
+ * Guide queries bound to one local Context, with no caller-supplied processor.
+ *
+ * The Context supplies the marking processor for evaluation. Local document
+ * validation remains available because this view holds the authored guides.
+ */
+export type LocalContextGuideEngineAdapter =
+    SynchronousContextOperations<GuideEngineAdapter> &
+    Pick<LocalGuideEngineAdapter, 'validate'>;
 
 /**
  * The composed surface: one resolved bundle of a scheme, its guides, and its
@@ -2927,8 +2975,8 @@ export interface ContextAdapter {
 
 /** A {@link ContextAdapter} whose operations complete synchronously. */
 export interface LocalContextAdapter extends ContextAdapter {
-    readonly scheme: LocalSchemeEngineAdapter;
-    readonly guide?: LocalGuideEngineAdapter;
+    readonly scheme: LocalContextSchemeEngineAdapter;
+    readonly guide?: LocalContextGuideEngineAdapter;
     readonly access?: LocalAccessEngineAdapter;
     describeSchemes(): ContextSchemeDescriptor[];
     audit(
