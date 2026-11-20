@@ -1,6 +1,6 @@
 {
     "name": "@ezclassify/validator",
-    "version": "1.0.0-dev.30",
+    "version": "1.0.0-rc.0",
     "type": "module",
     "description": "Schema-only validator for EzClassify scheme, guide, access, context, and crosswalk documents",
     "repository": {

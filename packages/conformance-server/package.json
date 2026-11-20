@@ -1,6 +1,6 @@
 {
     "name": "@ezclassify/conformance-server",
-    "version": "1.0.0-dev.30",
+    "version": "1.0.0-rc.0",
     "type": "module",
     "description": "Replay server for EzClassify SDK conformance and application integration scenarios: real HTTP, recorded answers, no engine",
     "repository": {

@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "EzClassify REST API",
-    "version": "1.0.0-dev.30",
+    "version": "1.0.0-rc.0",
     "description": "Context-bound API for processing, validating, aggregating, and scanning\nmarkings, checking access, and translating between schemes. A Context\ncomposes versioned schemes, layers, guides, access policies, and crosswalks.\n\nA deployment that requires authentication answers an unauthenticated\nrequest with the same not-found shape a missing resource gets. A 404 is\ntherefore not proof that a route or a resource is absent, and no operation\ndeclares a 401 or a 403 because the server never sends one.\n\nThe two kinds of 404 body are deliberately different. A refused request\ngets the constant body {\"error\": \"not_found\"} with no code and no detail,\nbecause telling a refusal apart from an absence is exactly what that\nshape exists to prevent; it is a security property and it will not gain\nfields. A request that did reach routing and matched no route gets the\nordinary error body carrying code \"route_not_found\". Clients classify on\nthe code: the message is prose and will change, and the constant refusal\nbody offers no code to classify on.\n\nRequests are closed. A query parameter an operation does not declare, or\na body field its request schema does not declare, is refused with a 400\ncarrying code \"INVALID_INPUT\" and a detail naming it, never ignored.\n",
     "contact": {
       "name": "EzClassify Support",

@@ -1,6 +1,6 @@
 {
     "name": "@ezclassify/tsconfig",
-    "version": "1.0.0-dev.30",
+    "version": "1.0.0-rc.0",
     "description": "Shared TypeScript base configurations for EzClassify projects",
     "repository": {
         "type": "git",

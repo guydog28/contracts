@@ -1,6 +1,6 @@
 {
     "name": "@ezclassify/schemas",
-    "version": "1.0.0-dev.30",
+    "version": "1.0.0-rc.0",
     "type": "module",
     "description": "Language-neutral spec bundle for EzClassify: JSON Schemas for authored documents and engine results",
     "repository": {

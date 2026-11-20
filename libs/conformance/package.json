@@ -1,6 +1,6 @@
 {
     "name": "@ezclassify/conformance",
-    "version": "1.0.0-dev.30",
+    "version": "1.0.0-rc.0",
     "type": "module",
     "description": "Conformance corpus for EzClassify engine implementations: plans, reference fixtures, recordings, and the per-SDK support matrix",
     "repository": {
